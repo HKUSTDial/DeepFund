@@ -29,7 +29,17 @@ thresholds = {
     "volatility": {
         "bullish": 0.8,
         "bearish": 1.2,
+    },
+    "volume": {
+        "trend": 20,
+        "correlation": 20,
+        "unusual_volume": 2.0,
+    },
+    "support_resistance": {
+        "window1": 5,
+        "window2": 20,
     }
+
 }
 
 
@@ -58,6 +68,8 @@ def technical_agent(state: FundState):
         "mean_reversion": get_mean_reversion_signal(prices_df, thresholds["mean_reversion"]),
         "rsi": get_rsi_signal(prices_df, thresholds["rsi"]),
         "volatility":  get_volatility_signal(prices_df, thresholds["volatility"]),
+        "volume": get_volume_analysis(prices_df, thresholds["volume"]),
+        "price_levels": get_support_resistance(prices_df, thresholds["support_resistance"]),
     }
 
     # Make prompt
@@ -190,3 +202,69 @@ def get_volatility_signal(prices_df, params):
         signal = Signal.NEUTRAL
 
     return signal
+
+
+def get_volume_analysis(prices_df, params):
+    """Analyze volume characteristics"""
+    volume = prices_df['volume']
+    price = prices_df['close']
+    
+    # Calculate volume moving average
+    vol_ma = volume.rolling(window=params["trend"]).mean()
+    
+    # Calculate price-volume relationship
+    price_volume_corr = price.rolling(window=params["correlation"]).corr(volume)
+    
+    # Calculate volume trend
+    vol_trend = (volume > vol_ma.shift(1)).astype(int)
+    
+    return {
+        'volume_trend': Signal.BULLISH if vol_trend.iloc[-1] == 1 else Signal.BEARISH,
+        'price_volume_correlation': price_volume_corr.iloc[-1],
+        'unusual_volume': volume.iloc[-1] > (vol_ma.iloc[-1] * params["unusual_volume"])
+    }
+
+def get_support_resistance(prices_df, params):
+    """Calculate support and resistance levels"""
+    def is_support(prices: pd.Series, i: int, window: int = params["window1"]) -> bool:
+        """Check if the price point is a support level"""
+        start_idx = max(0, i - window)
+        end_idx = min(len(prices), i + window + 1)
+        window_prices = prices.iloc[start_idx:end_idx]
+        current_price = prices.iloc[i]
+        return all(current_price <= p for idx, p in window_prices.items() if idx != i)
+    
+    def is_resistance(prices: pd.Series, i: int, window: int = params["window1"]) -> bool:
+        """Check if the price point is a resistance level"""
+        start_idx = max(0, i - window)
+        end_idx = min(len(prices), i + window + 1)
+        window_prices = prices.iloc[start_idx:end_idx]
+        current_price = prices.iloc[i]
+        return all(current_price >= p for idx, p in window_prices.items() if idx != i)
+    
+    def find_levels(prices: pd.Series, window: int = params["window2"]):
+        levels = []
+        for i in range(window, len(prices)):
+            if is_support(prices, i):
+                levels.append((i, prices.iloc[i]))
+            elif is_resistance(prices, i):
+                levels.append((i, prices.iloc[i]))
+        return levels
+    
+    price_data = prices_df['close']
+    current_price = price_data.iloc[-1]
+    levels = find_levels(price_data)
+    
+    support_levels = [price for _, price in levels if price < current_price]
+    resistance_levels = [price for _, price in levels if price > current_price]
+    
+    support = max(support_levels) if support_levels else None
+    resistance = min(resistance_levels) if resistance_levels else None
+    
+    return {
+        'current_price': current_price,
+        'nearest_support': support,
+        'nearest_resistance': resistance,
+        'price_to_support': (current_price - support) / support if support else None,
+        'price_to_resistance': (resistance - current_price) / current_price if resistance else None
+    }
