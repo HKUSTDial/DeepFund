@@ -153,6 +153,7 @@ deepfund/
 | technical     | Analyzes technical indicators  for short to medium-term price movement predictions. | Technical indicators trend, mean reversion, RSI, volatility, volume, support resistance. |
 ----
 **Unified Output**: Signal=(Bullish, Bearish, Neutral), Justification=...
+
 Currently, analyst **company_news**, **insider**, **policy**, and **technical** support specifying historical timestamps for backdated execution, while fundamental and macroeconomic operate on data with minimal short-term variability and do not require time overrides.
 
 ## System Dependencies
