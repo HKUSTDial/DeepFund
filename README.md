@@ -1,4 +1,4 @@
-# 💰💰💰  DeepFund 🔥🔥🔥
+# 💰💰  DeepFund 🔥🔥
 
 [![arXiv](https://img.shields.io/badge/arXiv-2503.18313-b31b1b.svg?style=flat)](https://arxiv.org/abs/2503.18313)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=flat)](https://www.python.org/downloads/release/python-3110/)
@@ -20,7 +20,7 @@ This project is for educational and research purposes only, it **DOES NOT TRADE*
 
 
 ## Framework
-![Framework](./image/framework.png)
+![Framework](./image/framework-v2.png)
 
 
 ## Setup Environment
@@ -161,8 +161,8 @@ deepfund/
 ## System Dependencies
 
 ### LLM Providers
-- Official API: OpenAI, DeepSeek, Anthropic, Zhipu, etc.
-- LLM Proxy API: Fireworks AI, AiHubMix, YiZhan, etc.
+- Official API: OpenAI, DeepSeek, Anthropic, Grok, etc.
+- LLM Proxy API: Fireworks AI, AiHubMix, etc.
 - Local API: Ollama, etc.
 
 ### Financial Data Source 
@@ -179,10 +179,10 @@ To add a new analyst to the DeepFund system, follow these general steps:
     Create a new Python file for your analyst within the `src/agents/analysts` directory. Implement the core logic for your analyst within this file. This typically involves defining an agent function that takes relevant inputs (like tickers, market data), performs analysis (potentially using LLMs or specific APIs), and returns signals.
 
 2.  **Define Prompts:**
-    If your analyst is driven by an LLM, define the prompt(s) it will use. These might go in the `src/graph/prompts/` directory or a similar location.
+    If your analyst is driven by an LLM, define the prompt(s) it will use. These will go in the `src/llm/prompt.py` file.
 
 3.  **Register the Analyst:**
-    Make the system aware of your new analyst. This might involve adding its name or reference to a central registry in `src/graph/constants.py` or within the agent registration logic in `src/agents/registry.py`. Check these files for patterns used by existing analysts.
+    Make the system aware of your new analyst. This will involve adding its name or reference to a central registry in `src/graph/constants.py` or within the agent registration logic in `src/agents/registry.py`. Check these files for patterns used by existing analysts.
 
 4.  **Update Configuration:**
     Add the unique name or key of your new analyst to the `workflow_analysts` list in your desired configuration file (e.g., `src/config/my_config.yaml`).
@@ -224,11 +224,11 @@ Consult the implementations for existing providers (like OpenAI, DeepSeek) in `s
 
 ## Acknowledgements
 The project gets inspiration and supports from the following projects:
-- [Cursor AI](https://www.cursor.com/), The AI Code Editor
 - [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund), An AI Hedge Fund Team
 - [LangGraph](https://langchain-ai.github.io/langgraph/tutorials/workflows), Tutorial on Workflows and Agents
 - [OpenManus](https://github.com/mannaandpoem/OpenManus), An open-source framework for building general AI agents
 - [Supabase](https://supabase.com/), The Open Source Firebase Alternative
+- [Cursor AI](https://www.cursor.com/), The AI Code Editor
 
 
 ## Citation
