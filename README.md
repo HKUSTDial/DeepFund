@@ -24,20 +24,29 @@ This project is for educational and research purposes only, it **DOES NOT TRADE*
 
 
 ## Setup Environment
-Pre-requisite: Install Conda (if not already installed): Go to [anaconda.com/download](https://www.anaconda.com/download/).
 
-1. Clone the repository:
+1. Choose an environment manager:
+   - If you want to use **Anaconda**: Install Conda (if not already installed): Go to [anaconda.com/download](https://www.anaconda.com/download/).
+   - If you want to use **uv**: Install uv (if not already installed): Go to [uv installation guide](https://docs.astral.sh/uv/getting-started/installation).
+
+2. Clone the repository:
 ```bash
 git clone https://github.com/HKUSTDial/DeepFund.git
 cd DeepFund
 ```
 
-2. Create a virtual env from the env configuration file:
-```bash
-conda env create -f environment.yml
-```
+3. Create a virtual env from the env configuration file:
+    1. If you are using **Anaconda**:
+         ```bash
+         conda env create -f environment.yml # if using Conda
+         ```
+    2. If you are using **uv**:
+         ```bash
+         uv sync # detects pyproject.toml, create an venv at project root, and install the dependencies
+         source .venv/bin/activate # or .venv\Scripts\activate for windows to activate the venv
+         ```
 
-3. Set up environment variables:
+4. Set up environment variables:
 ```bash
 # Create .env file for your API keys (OpenAI, DeepSeek, etc.)
 cp .env.example .env
