@@ -1,0 +1,23 @@
+[project]
+name = "deepfund"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pyyaml",
+  "pandas",
+  "numpy",
+  "python-dotenv",
+  "requests",
+  "yfinance",
+  "pydantic",
+  "supabase",
+  "langgraph",
+  "typing-extensions",
+  "langchain-openai",
+  "langchain-anthropic",
+  "langchain-deepseek",
+  "langchain-ollama",
+  "langchain-fireworks",
+]

@@ -38,6 +38,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# uv
+uv.lock
+.python-version
 
 # Txt files
 *.txt
