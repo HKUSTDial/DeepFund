@@ -25,6 +25,7 @@ class ConfigParser:
             raise ValueError(f"Error parsing configuration file: {e}")
         
         cfg['trading_date'] = datetime.strptime(self.trading_date, '%Y-%m-%d')
+        cfg['planner_mode'] = cfg.get('planner_mode', False)
 
         return cfg
 
