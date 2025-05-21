@@ -1,10 +1,11 @@
 # 💰💰  DeepFund 🔥🔥
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.18313-b31b1b.svg?style=flat)](https://arxiv.org/abs/2503.18313)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.11065-b31b1b.svg?style=flat)](https://arxiv.org/abs/2505.11065)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=flat)](https://www.python.org/downloads/release/python-3110/)
+[![DeepWiki](https://img.shields.io/badge/DeepWiki-Powered_by_Devin-6ef2cc.svg?style=flat)](https://deepwiki.com/HKUSTDial/DeepFund)
 
 ![Arena](./image/arena_v1.png)
-> 🔔 Car-racing is for illustration only. Model performance is subject to the actual financial market.
+> 🏁 Car-racing is for illustration only. LLM performance is subject to the real market environment.
 
 This project serves as an ideal solution to the below key question:
 
@@ -12,11 +13,12 @@ This project serves as an ideal solution to the below key question:
 
 We evaluate the trading capability of LLM across various financial markets given a unified environment. The LLM shall ingest external information, drive a multi-agent system, and make trading decisions. The LLM performance will be presented in a trading arena view across various dimensions. 
 
-> 🔔 We are working on adding more particular analysts, extensive market and a front-end dashboard to deliver fresh insights. Welcome to collaborate with us!
 
 
-## Disclaimer
+## Gentle Reminder
 This project is for educational and research purposes only, it **DOES NOT TRADE** actually.
+
+> 🔔 We are working on adding more particular analysts, extensive market and a front-end dashboard to deliver fresh insights. Welcome to collaborate with us via email (yuyuluo[at]hkust-gz.edu.cn)!
 
 
 ## Framework
@@ -36,11 +38,11 @@ cd DeepFund
 ```
 
 3. Create a virtual env from the env configuration file:
-    1. If you are using **Anaconda**:
+    - If you are using **Anaconda**:
          ```bash
          conda env create -f environment.yml # if using Conda
          ```
-    2. If you are using **uv**:
+    - If you are using **uv**:
          ```bash
          uv sync # detects pyproject.toml, create an venv at project root, and install the dependencies
          source .venv/bin/activate # or .venv\Scripts\activate for windows to activate the venv
@@ -69,9 +71,9 @@ SQLite is a lightweight database that stores data locally.
 cd src
 python database/sqlite_setup.py
 ```
-- You may install VSCode Extension [SQLite Viewer](https://marketplace.cursorapi.com/items?itemName=qwtel.sqlite-viewer) to explore the database.
+- You may need to install VSCode Extension [SQLite Viewer](https://marketplace.cursorapi.com/items?itemName=qwtel.sqlite-viewer) to explore the database.
 - Path: `src/assets/deepfund.db`
-- Switch to local DB by adding `--local-db` option in the command line. 
+
 
 ### Relation Diagram
 DeepFund system gets supported by four elementary tables: 
@@ -96,6 +98,7 @@ python main.py --config xxx.yaml --trading-date YYYY-MM-DD [--local-db]
 ```
 
 `trading-date` coordinates the trading date for the system. It can be set to historical trading date till the last trading date. As the portfolio is updated daily, client must use it in **chronological order** to replay the trading history.
+Switch to local DB by adding `--local-db` option in the command line. 
 
 ### Configurations
 Configs are saved in `src/config`. Below is a config template:
@@ -241,7 +244,22 @@ The project gets inspiration and supports from the following projects:
 
 
 ## Citation
-If you find this project useful, please cite it as follows:
+If you find it useful, please cite it as follows:
+
+- Project Paper
+```bibtex
+@misc{li2025timetravel,
+      title={Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking}, 
+      author={Changlun Li and Yao Shi and Chen Wang and Qiqi Duan and Runke Ruan and Weijie Huang and Haonan Long and Lijun Huang and Yuyu Luo and Nan Tang},
+      year={2025},
+      eprint={2505.11065},
+      archivePrefix={arXiv},
+      primaryClass={cs.CE},
+      url={https://arxiv.org/abs/2505.11065}, 
+}
+```
+
+- Vision Paper
 ```bibtex
 @misc{li2025deepfund,
       title={DeepFund: Will LLM be Professional at Fund Investment? A Live Arena Perspective}, 
