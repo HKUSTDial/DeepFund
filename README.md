@@ -1,24 +1,30 @@
 # 💰💰  DeepFund 🔥🔥
 
-[![arXiv](https://img.shields.io/badge/arXiv-2505.11065-b31b1b.svg?style=flat)](https://arxiv.org/abs/2505.11065)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.18313-b31b1b.svg?style=flat)](https://arxiv.org/abs/2503.18313)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=flat)](https://www.python.org/downloads/release/python-3110/)
+[![Demo](https://img.shields.io/badge/Demo-Powered_by_Streamlit-ffa600.svg?style=flat)](https://deepfund.paradoox.ai/)
 [![DeepWiki](https://img.shields.io/badge/DeepWiki-Powered_by_Devin-6ef2cc.svg?style=flat)](https://deepwiki.com/HKUSTDial/DeepFund)
 
+## Will LLMs Be Professional At Fund Investment? 
+This project serves as an ideal solution to the above key question. We evaluate the trading capability of LLM across various financial markets given a unified environment. The LLM shall ingest external information, drive a multi-agent system, and make trading decisions. The LLM performance will be presented in a trading arena view across various dimensions. 
+
+
 ![Arena](./image/arena_v1.png)
-> 🏁 Car-racing is for illustration only. LLM performance is subject to the real market environment.
-
-This project serves as an ideal solution to the below key question:
-
-### Will LLMs Be Professional At Fund Investment? 
-
-We evaluate the trading capability of LLM across various financial markets given a unified environment. The LLM shall ingest external information, drive a multi-agent system, and make trading decisions. The LLM performance will be presented in a trading arena view across various dimensions. 
+> 🏁 Car-racing is for illustration only. LLM performance is subject to the real market. <br>
+> ‼️ This project is for research purposes only, it **DOES NOT TRADE**.
 
 
 
-## Gentle Reminder
-This project is for educational and research purposes only, it **DOES NOT TRADE** actually.
+## Updates
+- 2025-06-09: DeepFund Trading Arena is available at [this link](https://deepfund.paradoox.ai/)
+- 2025-05-24: Our project paper is released on [arXiv](https://arxiv.org/abs/2503.18313)
 
-> 🔔 We are working on adding more particular analysts, extensive market and a front-end dashboard to deliver fresh insights. Welcome to collaborate with us via email (yuyuluo[at]hkust-gz.edu.cn)!
+
+## Contact Us
+This project aims to be a **long-term research project**. We are adding more particular analysts, expanding market coverage and building dashboard to deliver fresh insights.
+- General Inquiries: Mr. Changlun Li, cli942[at]connect.hkust-gz.edu.cn
+- Research Collaboration: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
+
 
 
 ## Framework
@@ -153,86 +159,12 @@ deepfund/
 ├── ...
 ```
 
-##  Analyst Breakdown
+## 📚 Additional Resources
 
-|    Name     |   Function  | Upstream Source | 
-| ----------- | ----------- | ----------- | 
-| company_news  | Analyzes company news. | Lately Company news.  | 
-| fundamental   | Analyzes financial metrics. | Company profitability, growth, cashflow and financial health. |
-| insider       | Analyzes company insider trading activity. | Recent insider transactions made by key stakeholders. |
-| macroeconomic | Analyzes macroeconomic indicators. | US economic indicators GDP, CPI, rate, unemployment, etc.    |
-| policy        | Analyzes policy news. | Fiscal and monetary policy news. |
-| technical     | Analyzes technical indicators  for short to medium-term price movement predictions. | Technical indicators trend, mean reversion, RSI, volatility, volume, support resistance. |
-
-#### Remarks:
-**Unified Output**: All analysts output the same format: Signal=(Bullish, Bearish, Neutral), Justification=...
-
-**Time-sensitive Analysts**: Because of the constraints of upstream API service, analyst **company_news**, **insider**, **policy**, and **technical** support  historical data analysis via `trading-date` option, while other analysts can only retrieve the latest data.
-
-
-## System Dependencies
-
-### LLM Providers
-- Official API: OpenAI, DeepSeek, Anthropic, Grok, etc.
-- LLM Proxy API: Fireworks AI, AiHubMix, etc.
-- Local API: Ollama, etc.
-
-### Financial Data Source 
-- Alpha Vantage API: Stock Market Data API, [Claim Free API Key](https://www.alphavantage.co)
-- YFinance API: Download Market Data from Yahoo! Finance’s API, [Doc](https://yfinance-python.org/)
-
-
-## Advanced Usage
-### How to add a new analyst?
-
-To add a new analyst to the DeepFund system, follow these general steps:
-
-1.  **Build the Analyst:**
-    Create a new Python file for your analyst within the `src/agents/analysts` directory. Implement the core logic for your analyst within this file. This typically involves defining an agent function that takes relevant inputs (like tickers, market data), performs analysis (potentially using LLMs or specific APIs), and returns signals.
-
-2.  **Define Prompts:**
-    If your analyst is driven by an LLM, define the prompt(s) it will use. These will go in the `src/llm/prompt.py` file.
-
-3.  **Register the Analyst:**
-    Make the system aware of your new analyst. This will involve adding its name or reference to a central registry in `src/graph/constants.py` or within the agent registration logic in `src/agents/registry.py`. Check these files for patterns used by existing analysts.
-
-4.  **Update Configuration:**
-    Add the unique name or key of your new analyst to the `workflow_analysts` list in your desired configuration file (e.g., `src/config/my_config.yaml`).
-
-5.  **Add Data Dependencies (if any):**
-    If your analyst requires new external data sources (e.g., a specific API), add the necessary API client logic in the `src/apis/` directory, and update environment variable handling (`.env.example`, `.env`) if API keys are needed.
-
-6.  **Testing:**
-    Thoroughly test your new analyst by running the system with a configuration that includes it. Check the database tables (`Decision`, `Signal`) to ensure it produces the expected output and integrates correctly with the portfolio manager.
-
-Remember to consult the existing analyst implementations in `src/agents/` and the workflow definitions in `src/graph/` for specific patterns and conventions used in this project.
-
----
-
-### How to add a new base LLM?
-
-To integrate a new LLM provider (e.g., a different API service) into the system:
-
-1.  **Implement Provider Logic:**
-    Please refer to `src/llm/new_provider.py` for the implementation. We align the structure of the new provider with the existing providers.
-
-2.  **Handle API Keys:**
-    If the new provider requires an API key or other credentials, add the corresponding environment variable(s) to `.env.example` and instruct users to add their keys to their `.env` file.
-
-3.  **Update Configuration:**
-    Document the necessary `provider` and `model` names for the new service. Users will need to specify these in their YAML configuration files under the `llm:` section (e.g., in `src/config/provider/my_config.yaml`).
-    ```yaml
-    llm:
-      provider: "" # The identifier you added in step 1
-      model: "" # provider-specific settings here
-    ```
-
-4.  **Testing:**
-    Run the system using a configuration file that specifies your new LLM provider. Ensure that the LLM calls are successful and that the agents receive the expected responses.
-
-Consult the implementations for existing providers (like OpenAI, DeepSeek) in `src/llm/` as a reference.
-
-
+**[Technical Guide](./TECHNICAL_GUIDE.md)** - Detailed information for developers including:
+  - Analyst breakdown and system architecture
+  - System dependencies and API requirements  
+  - Advanced usage: Adding new analysts and LLM providers
 
 ## Acknowledgements
 The project gets inspiration and supports from the following projects:
