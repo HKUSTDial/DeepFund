@@ -1,6 +1,6 @@
 # 💰💰  DeepFund 🔥🔥
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.18313-b31b1b.svg?style=flat)](https://arxiv.org/abs/2503.18313)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.11065-b31b1b.svg?style=flat)](https://arxiv.org/abs/2505.11065)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=flat)](https://www.python.org/downloads/release/python-3110/)
 [![Demo](https://img.shields.io/badge/Demo-Powered_by_Streamlit-ffa600.svg?style=flat)](https://deepfund.paradoox.ai/)
 [![DeepWiki](https://img.shields.io/badge/DeepWiki-Powered_by_Devin-6ef2cc.svg?style=flat)](https://deepwiki.com/HKUSTDial/DeepFund)
@@ -174,6 +174,10 @@ The project gets inspiration and supports from the following projects:
 - [Supabase](https://supabase.com/), The Open Source Firebase Alternative
 - [Cursor AI](https://www.cursor.com/), The AI Code Editor
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=HKUSTDial/DeepFund&type=Date)](https://www.star-history.com/#HKUSTDial/DeepFund&Date)
+
 
 ## Citation
 If you find it useful, please cite it as follows:
@@ -203,3 +207,4 @@ If you find it useful, please cite it as follows:
       url={https://arxiv.org/abs/2503.18313}, 
 }
 ```
+
