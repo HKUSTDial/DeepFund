@@ -16,8 +16,9 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 
 ## Updates
+- 2025-09-19: Our [project paper](https://arxiv.org/abs/2505.11065) is accepted by **NeurIPS 2025** as a poster.
+- 2025-08-29: Our [vision paper](https://arxiv.org/abs/2503.18313) is accepted by **IJCAI 2025** [FinLLM Workshop](https://finllm.github.io/workshop/#/) with Oral Paper Award.
 - 2025-07-03: Visit [paradoox.ai](https://paradoox.ai/) and join waitlist to get early access to our product-ready release.
-- 2025-06-20: Our [vision paper](https://arxiv.org/abs/2503.18313) is accepted by IJCAI 2025 FinLLM Workshop.
 - 2025-06-09: DeepFund & Arena Leaderboard is [available](https://deepfund.paradoox.ai/) for demonstration.
 - 2025-05-24: Our [project paper]((https://arxiv.org/abs/2505.11065)) is released on arXiv.
 
