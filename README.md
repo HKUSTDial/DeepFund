@@ -29,6 +29,7 @@ This project aims to be a **long-term research project**. We are adding more par
 - Research Collaboration: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
   
 👇 If you are interested, you are welcome to join our ecological community to discuss together by scanning the QR code below.
+
 ![WechatGroup](./image/wechatQR.png)
 
 ## Framework
