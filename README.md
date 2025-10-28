@@ -27,8 +27,9 @@ This project serves as an ideal solution to the above key question. We evaluate 
 This project aims to be a **long-term research project**. We are adding more particular analysts, expanding market coverage and building dashboard to deliver fresh insights.
 - General Inquiries: Mr. Changlun Li, cli942[at]connect.hkust-gz.edu.cn
 - Research Collaboration: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
-
-
+  
+👇 If you are interested, you are welcome to join our ecological community to discuss together by scanning the QR code below.
+![WechatGroup](./image/wechatQR.png)
 
 ## Framework
 ![Framework](./image/framework-v2.png)
