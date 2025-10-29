@@ -16,6 +16,7 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 
 ## Updates
+- 2025-10-28: DeepFund get reported by **QuantML**, a FinTech community. Read its article in WeChat: [link](https://mp.weixin.qq.com/s/51y5eIzuQ_miqeZ3oO4Jzw).
 - 2025-09-19: Our [project paper](https://arxiv.org/abs/2505.11065) is accepted by **NeurIPS 2025** as a poster.
 - 2025-08-29: Our [vision paper](https://arxiv.org/abs/2503.18313) is accepted by **IJCAI 2025** [FinLLM Workshop](https://finllm.github.io/workshop/#/) with Oral Paper Award.
 - 2025-07-03: Visit [paradoox.ai](https://paradoox.ai/) and join waitlist to get early access to our product-ready release.
@@ -25,12 +26,14 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 ## Contact Us
 This project aims to be a **long-term research project**. We are adding more particular analysts, expanding market coverage and building dashboard to deliver fresh insights.
-- General Inquiries: Mr. Changlun Li, cli942[at]connect.hkust-gz.edu.cn
-- Research Collaboration: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
+- **General Inquiries**: Mr. Changlun Li, cli942[at]connect.hkust-gz.edu.cn
+- **Research Collaboration**: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
   
 👇 If you are interested, you are welcome to join our ecological community to discuss together by scanning the QR code below.
 
-![WechatGroup](./image/wechatQR.png)
+<p align="center">
+  <img src="./image/wechatQR.png" alt="WechatGroup" width="240px" />
+</p>
 
 ## Framework
 ![Framework](./image/framework-v2.png)
@@ -191,7 +194,7 @@ If you find it useful, please cite it as follows:
 ```bibtex
 @misc{li2025timetravel,
       title={Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking}, 
-      author={Changlun Li and Yao Shi and Chen Wang and Qiqi Duan and Runke Ruan and Weijie Huang and Haonan Long and Lijun Huang and Yuyu Luo and Nan Tang},
+      author={Changlun Li and Yao Shi and Chen Wang and Qiqi Duan and Runke Ruan and Weijie Huang and Haonan Long and Lijun Huang and Nan Tang and Yuyu Luo},
       year={2025},
       eprint={2505.11065},
       archivePrefix={arXiv},
