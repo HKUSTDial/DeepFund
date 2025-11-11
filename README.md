@@ -25,19 +25,28 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 
 ## Contact Us
-This project aims to be a **long-term research project**. We are adding more particular analysts, expanding market coverage and building dashboard to deliver fresh insights.
-- **General Inquiries**: Mr. Changlun Li, cli942[at]connect.hkust-gz.edu.cn
-- **Research Collaboration**: Prof. Yuyu Luo,  yuyuluo[at]hkust-gz.edu.cn
+This project aims to be aligned with *TRL 1 –> 9 progression*, self-rated as 4 (What is [TRL](https://en.wikipedia.org/wiki/Technology_readiness_level)?), from exploratory research to production-ready systems, so we welcome any collaboration. If you are interested, reach out by email or scan the WeChat QR code below. 
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<h3>General Inquiries</h3>
+<p><b>Mr. Changlun Li</b></p>  
+<p>📮 cli942[at]connect.hkust-gz.edu.cn</p>
+<p>💬 WeChat <a href="./image/tiger_wechat.jpg">QR Code</a> </p>
+
+</td>
+<td width="50%" valign="top">
+
+<h3>Research Collaborations</h3>
+<p><b>Prof. Yuyu Luo</b></p>  
+📮 yuyuluo[at]hkust-gz.edu.cn
+
+</td>
+</tr>
+</table>
   
-👇 If you are interested, you are welcome to join our ecological community to discuss together by scanning the QR code below.
-
-<p align="center">
-  <img src="./image/wechatQR.png" alt="WechatGroup" width="240px" />
-</p>
-
-## Framework
-![Framework](./image/framework-v2.png)
-
 
 ## Setup Environment
 
@@ -175,7 +184,7 @@ deepfund/
   - Advanced usage: Adding new analysts and LLM providers
 
 ## Acknowledgements
-The project gets inspiration and supports from the following projects:
+The project gets inspiration from the following projects:
 - [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund), An AI Hedge Fund Team
 - [LangGraph](https://langchain-ai.github.io/langgraph/tutorials/workflows), Tutorial on Workflows and Agents
 - [OpenManus](https://github.com/mannaandpoem/OpenManus), An open-source framework for building general AI agents
