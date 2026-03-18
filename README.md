@@ -2,8 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2505.11065-b31b1b.svg?style=flat)](https://arxiv.org/abs/2505.11065)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=flat)](https://www.python.org/downloads/release/python-3110/)
-[![Demo](https://img.shields.io/badge/Demo-Powered_by_Streamlit-ffa600.svg?style=flat)](https://deepfund.paradoox.ai/)
-[![DeepWiki](https://img.shields.io/badge/DeepWiki-Powered_by_Devin-6ef2cc.svg?style=flat)](https://deepwiki.com/HKUSTDial/DeepFund)
+[![BibTex](https://img.shields.io/badge/Citation-BibTex-ffa600.svg?style=flat)](#citation)
 
 ## Will LLMs Be Professional At Fund Investment? 
 This project serves as an ideal solution to the above key question. We evaluate the trading capability of LLM across various financial markets given a unified environment. The LLM shall ingest external information, drive a multi-agent system, and make trading decisions. The LLM performance will be presented in a trading arena view across various dimensions. 
@@ -17,6 +16,7 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 
 ## Updates
+- 2026-03: We collaborate with FinTech startup, **Paradoox AI** for buiding trustworthy AI solution for financial organizations. Open roles for **AI Engineers** and **Research Assistant**. If you are interested, please check out our [recruitment post](https://zcnesmhm61yl.feishu.cn/wiki/space/7617101105503145156) (Chinese Version only).
 - 2025-10: Check out the latest news about DeepFund on **QuantML**([link](https://mp.weixin.qq.com/s/51y5eIzuQ_miqeZ3oO4Jzw)) and **SyncedTech**(机器之心,[link](https://www.jiqizhixin.com/articles/2025-10-30-9)). Besides, our project won the Best Open-source Award (最佳开源项目) in **AI Agent 2025** competition ([link](https://mp.weixin.qq.com/s/U0bg0Fh9p5rYPtd0wzL2WQ)).
 - 2025-09: Our [project paper](https://arxiv.org/abs/2505.11065) is accepted by **NeurIPS 2025** as a poster.
 - 2025-08: Our [vision paper](https://arxiv.org/abs/2503.18313) is accepted by **IJCAI 2025** [FinLLM Workshop](https://finllm.github.io/workshop/#/) with Oral Paper Award.
@@ -25,28 +25,18 @@ This project serves as an ideal solution to the above key question. We evaluate 
 
 
 ## Contact Us
-This project aims to be aligned with *TRL 1 –> 9 progression*, self-rated as 4 (What is [TRL](https://en.wikipedia.org/wiki/Technology_readiness_level)?), from exploratory research to production-ready systems, so we welcome any collaboration. If you are interested, reach out by email or scan the WeChat QR code below. 
+This project aims to be aligned with *TRL 1 –> 9 progression*, self-rated as 4 (What is [TRL](https://en.wikipedia.org/wiki/Technology_readiness_level)?), from exploratory research to production-ready systems, so we welcome any collaboration. If you are interested, reach out by email or WeChat. 
 
-<table>
-<tr>
-<td width="50%" valign="top">
 
-<h3>General Inquiries</h3>
-<p><b>Mr. Changlun Li</b></p>  
-<p>📮 cli942[at]connect.hkust-gz.edu.cn</p>
-<p>💬 WeChat <a href="./image/tiger_wechat.jpg">QR Code</a> </p>
 
-</td>
-<td width="50%" valign="top">
+### General Inquiries
+<p><b>Mr. Changlun Li</b>, Email: tiger@paradoox.ai, WeChat: <a href="./image/tiger_wechat.jpg">QR Code</a> </p>
 
-<h3>Research Collaborations</h3>
-<p><b>Prof. Yuyu Luo</b></p>  
-📮 yuyuluo[at]hkust-gz.edu.cn
+### Research Collaborations
+<p><b>Prof. Yuyu Luo</b>, Email: yuyuluo[at]hkust-gz.edu.cn</p> 
 
-</td>
-</tr>
-</table>
-  
+## Framework
+![Framework](./image/framework-v2.png)
 
 ## Setup Environment
 
@@ -199,29 +189,28 @@ The project gets inspiration from the following projects:
 ## Citation
 If you find it useful, please cite it as follows:
 
-- Project Paper
+- Project Paper, poster accepted by NeurIPS 2025 D&B Track
 ```bibtex
-@misc{li2025timetravel,
-      title={Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking}, 
-      author={Changlun Li and Yao Shi and Chen Wang and Qiqi Duan and Runke Ruan and Weijie Huang and Haonan Long and Lijun Huang and Nan Tang and Yuyu Luo},
-      year={2025},
-      eprint={2505.11065},
-      archivePrefix={arXiv},
-      primaryClass={cs.CE},
-      url={https://arxiv.org/abs/2505.11065}, 
+@inproceedings{
+  li2025time,
+  title={Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking},
+  author={Changlun Li and Yao SHI and Chen Wang and Qiqi Duan and Runke RUAN and Weijie Huang and Haonan Long and Lijun Huang and Nan Tang and Yuyu Luo},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+  year={2025},
+  url={https://openreview.net/forum?id=SXADEhZ0sl}
 }
 ```
 
-- Vision Paper
+- Vision Paper, oral accepted by IJCAI 2025 FinLLM Workshop
 ```bibtex
 @misc{li2025deepfund,
-      title={DeepFund: Will LLM be Professional at Fund Investment? A Live Arena Perspective}, 
-      author={Changlun Li and Yao Shi and Yuyu Luo and Nan Tang},
-      year={2025},
-      eprint={2503.18313},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA},
-      url={https://arxiv.org/abs/2503.18313}, 
+  title={DeepFund: Will LLM be Professional at Fund Investment? A Live Arena Perspective}, 
+  author={Changlun Li and Yao Shi and Yuyu Luo and Nan Tang},
+  year={2025},
+  eprint={2503.18313},
+  archivePrefix={arXiv},
+  primaryClass={cs.MA},
+  url={https://arxiv.org/abs/2503.18313}, 
 }
 ```
 
