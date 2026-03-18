@@ -3,21 +3,21 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python>=3.11
+  - python=3.11.11
   - pip
-  - pyyaml
-  - pandas
-  - numpy
-  - python-dotenv
-  - requests
-  - yfinance
+  - pyyaml=6.0.2
+  - pandas=2.2.3
+  - numpy=2.2.3
+  - python-dotenv=1.0.1
+  - requests=2.32.3
+  - yfinance=0.2.55
   - pip:
-    - pydantic
-    - supabase
-    - langgraph
-    - typing-extensions 
-    - langchain-openai
-    - langchain-anthropic
-    - langchain-deepseek
-    - langchain-ollama
-    - langchain-fireworks
+    - pydantic==2.10.6
+    - supabase==2.15.0
+    - langgraph==0.3.1
+    - typing-extensions==4.12.2
+    - langchain-openai==0.3.14
+    - langchain-anthropic==0.3.8
+    - langchain-deepseek==0.1.2
+    - langchain-ollama==0.2.3
+    - langchain-fireworks==0.2.9
